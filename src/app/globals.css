@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-space-mono);
+
+  --color-obsidian: #0b0a0c;
+  --color-obsidian-2: #131013;
+  --color-surface: #171416;
+  --color-surface-2: #1f1a1d;
+  --color-hairline: #2c2529;
+  --color-ivory: #f3ece1;
+  --color-ivory-dim: #cfc6ba;
+  --color-champagne: #c9a668;
+  --color-champagne-2: #e3c78d;
+  --color-cherry: #6f1226;
+  --color-cherry-2: #931a33;
+
+  --breakpoint-xs: 420px;
+}
+
+:root {
+  --background: var(--color-obsidian);
+  --foreground: var(--color-ivory);
+}
+
+* {
+  border-color: var(--color-hairline);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+background: var(--color-obsidian);
+
+background-image:
+  radial-gradient(
+    circle at 50% 0%,
+    rgba(201, 104, 104, 0.06),
+    transparent 45%
+  ),
+  radial-gradient(
+    circle at 100% 100%,
+    rgba(112, 23, 5, 0.08),
+    transparent 40%
+  ),
+  repeating-linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.006) 0px,
+    rgba(255, 255, 255, 0.006) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-champagne);
+  color: var(--color-obsidian);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+.font-mono-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.27em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  color: var(--color-champagne);
+}
+
+.ticket-edge {
+  position: relative;
+}
+.ticket-edge::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-hairline) 0,
+    var(--color-hairline) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  background-size: 12px 1px;
+}
+
+.gold-underline {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--color-champagne) 15%,
+    var(--color-champagne) 85%,
+    transparent
+  );
+  height: 1px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 3px;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-1%, -2%); }
+  30% { transform: translate(2%, 1%); }
+  50% { transform: translate(-2%, 3%); }
+  70% { transform: translate(3%, -1%); }
+  90% { transform: translate(-1%, 2%); }
+}
+
+.grain-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: -10%;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 8s steps(8) infinite;
+}
+
+
+
+/* css for sidebar */
+/* globals.css */
+
+/* Firefox support: Thin scrollbar with custom colors */
+* {
+  scrollbar-width: thin; /* Options: auto | thin | none */
+  scrollbar-color: #3a0f04 #f3f4f6; /* thumb color | track color */
+}
+
+/* WebKit browsers (Chrome, Edge, Safari): More detailed control */
+*::-webkit-scrollbar {
+  width: 6px; /* Vertical scrollbar width */
+  height: 6px; /* Horizontal scrollbar height */
+}
+
+*::-webkit-scrollbar-track {
+  background: #f3f4f6; /* Track (background) color */
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #ff3700; /* Thumb color */
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff3700; /* Hover color for thumb */
+}
+
+/* Optional: Hide scrollbar entirely but keep scrolling */
+/* *::-webkit-scrollbar { display: none; } */
+.scroll-top-btn:hover {
+  background-color: #ff3700 !important; /* Darker blue on hover */
+}
