@@ -51,7 +51,7 @@ export default function HomePage() {
            <h1 className="font-display text-5xl sm:text-6xl md:text-8xl leading-[1.05] mt-5 max-w-5xl text-balance">
   We lost our Fiverr profile.{" "}
   <span className="italic text-champagne">
-    Contact us on WhatsApp (+880 1817-017901).
+    Contact us on WhatsApp (+966 59 926 9504).
   </span>
 </h1>
           </Reveal>
