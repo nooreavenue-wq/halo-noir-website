@@ -48,10 +48,12 @@ export default function HomePage() {
             <span className="eyebrow">International Table Bookings · By Request Only</span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="font-display text-5xl sm:text-6xl md:text-8xl leading-[1.05] mt-5 max-w-5xl text-balance">
-              The best tables, in the world&apos;s{" "}
-              <span className="italic text-champagne">best rooms.</span>
-            </h1>
+           <h1 className="font-display text-5xl sm:text-6xl md:text-8xl leading-[1.05] mt-5 max-w-5xl text-balance">
+  We lost our Fiverr profile.{" "}
+  <span className="italic text-champagne">
+    Contact us on WhatsApp (+880 1817-017901).
+  </span>
+</h1>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-xl text-ivory-dim text-base sm:text-lg leading-relaxed">
